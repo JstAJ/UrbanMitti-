@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UrbanMitti — Handcrafted earthen products. Discover the soul of sustainable luxury and Indian craftsmanship in every piece." />
+  <title>UrbanMitti — Earth. Craft. Soul.</title>
+  
+  <!-- Preconnecting Google Fonts API -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Premium icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- LINKING EXTRACTED BRAND DESIGN STYLESHEET -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- CINEMATIC BRAND LOGO LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo-container">
+        <!-- Elegant Spinning Progress Ring -->
+        <div class="loader-logo-ring"></div>
+        <!-- High-Resolution Circular Brand Logo Image -->
+        <img src="assets/images/brand_logo.jpg" alt="UrbanMitti Logo" class="loader-logo-img" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <div class="announcement-scroll">
+      <span>🌿 100% natural organic clay crafted by master potters</span>
+      <span>📦 eco-friendly sustainable packaging — zero plastic usage</span>
+      <span>🤲 supporting traditional indian artisan families nationwide</span>
+      <span>🌿 100% natural organic clay crafted by master potters</span>
+    </div>
+  </div>
+
+  <!-- HEADER / STICKY NAVBAR -->
+  <header id="mainHeader">
+    <div class="header-inner">
+      <a onclick="showPage('home')" class="logo">Urban<span>Mitti</span></a>
+      <nav>
+        <a onclick="showPage('home')" class="nav-link active">Home</a>
+        <a onclick="showPage('shop')" class="nav-link">Shop</a>
+        <a onclick="showPage('about')" class="nav-link">Our Heritage</a>
+        <a onclick="showPage('contact')" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleCart()"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cartBadge">0</span></button>
+        <button class="icon-btn" onclick="showPage('wishlist')"><i class="far fa-heart"></i><span class="cart-badge" id="wishlistBadge">0</span></button>
+        <button class="icon-btn" id="navAuthBtn" onclick="showPage('dashboard')"><i class="far fa-user"></i></button>
+        <button class="icon-btn" onclick="showPage('admin')" title="Admin Portal" style="color:var(--primary-sage)"><i class="fas fa-user-shield"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION SCREEN -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav onclick="closeMobileNav()">
+      <a onclick="showPage('home')" class="nav-link">Home</a>
+      <a onclick="showPage('shop')" class="nav-link">Shop</a>
+      <a onclick="showPage('about')" class="nav-link">Our Heritage</a>
+      <a onclick="showPage('contact')" class="nav-link">Contact</a>
+      <a onclick="showPage('wishlist')" class="nav-link">Wishlist</a>
+      <a onclick="showPage('dashboard')" class="nav-link">My Account</a>
+    </nav>
+  </div>
+
+  <!-- FLOATING QUICK NAVIGATION CORNER BUTTON -->
+  <div id="quick-nav-corner">
+    <div class="quick-nav-menu" id="quickNavMenu">
+      <div class="quick-nav-item" onclick="showPage('home'); toggleQuickNav()"><i class="fas fa-home"></i> Home</div>
+      <div class="quick-nav-item" onclick="showPage('shop'); toggleQuickNav()"><i class="fas fa-store"></i> Shop</div>
+      <div class="quick-nav-item" onclick="showPage('about'); toggleQuickNav()"><i class="fas fa-scroll"></i> Heritage</div>
+      <div class="quick-nav-item" onclick="showPage('contact'); toggleQuickNav()"><i class="fas fa-paper-plane"></i> Contact</div>
+      <div class="quick-nav-item" onclick="toggleCart(); toggleQuickNav()"><i class="fas fa-shopping-bag"></i> My Bag</div>
+    </div>
+    <button class="quick-nav-trigger" id="quickNavTrigger" onclick="toggleQuickNav()"><i class="fas fa-compass"></i></button>
+  </div>
+
+  <!-- ============================================================
+       PAGE: HOME (LANDING PAGE)
+       ============================================================ -->
+  <div class="page active" id="page-home">
+    
+    <!-- HERO SECTION WITH SLIDER/CAROUSEL -->
+    <div class="hero-carousel" id="heroCarousel">
+      <div class="hero-noise"></div>
+      <div class="carousel-inner" id="carouselInner">
+        
+        <!-- Slide 1: Handcrafted Pottery -->
+        <div class="carousel-slide active">
+          <div class="slide-grid">
+            <div class="slide-content">
+              <span class="slide-badge">Timeless Heritage</span>
+              <h1 class="slide-title">Imparting Earthen <em>Soul</em> to Modern Homes</h1>
+              <p class="slide-desc">Handcrafted organic clayware spun by generational Indian artisans. Pure soil, natural cooling, and artistic soul, designed for premium wellness living.</p>
+              <div class="slide-actions">
+                <button class="btn btn-sage btn-wide" onclick="showPage('shop')">Shop Collection</button>
+                <button class="btn btn-outline btn-wide" style="color:var(--cream);border-color:var(--cream)" onclick="scrollToSection('homeFeatured')">Explore Crafts</button>
+              </div>
+            </div>
+            <div class="slide-visual">
+              <div class="hero-product-card">
+                <div class="hero-img-wrap"><img src="assets/images/clay_water_pot.png" alt="Mitti Water Pot" /></div>
+                <div class="hero-meta">
+                  <p class="hero-tag">Best Seller · Cooling Pot</p>
+                  <h3 class="hero-name">Rajasthani Mitti Water Pot</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Corporate Gifting & Office Decor -->
+        <div class="carousel-slide">
+          <div class="slide-grid">
+            <div class="slide-content">
+              <span class="slide-badge">Bespoke Curation</span>
+              <h1 class="slide-title">Corporate <em>Gifting</em> & Sustainable Decor</h1>
+              <p class="slide-desc">Elevate your workspace with eco-friendly corporate hampers, hand-sculpted planters, and custom clay desk sets. Curated with sustainable packaging for proud gifting.</p>
+              <div class="slide-actions">
+                <button class="btn btn-sage btn-wide" onclick="showPage('shop'); filterAndShop('Gifting')">Explore Gifting</button>
+                <button class="btn btn-outline btn-wide" style="color:var(--cream);border-color:var(--cream)" onclick="showPage('contact')">Corporate Query</button>
+              </div>
+            </div>
+            <div class="slide-visual">
+              <div class="hero-product-card">
+                <div class="hero-img-wrap"><img src="assets/images/clay_planter.png" alt="Earthen Planter" /></div>
+                <div class="hero-meta">
+                  <p class="hero-tag">Premium Office Decor</p>
+                  <h3 class="hero-name">Terracotta Planter Large</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Sustainable Kitchenware -->
+        <div class="carousel-slide">
+          <div class="slide-grid">
+            <div class="slide-content">
+              <span class="slide-badge">Earthy Dining</span>
+              <h1 class="slide-title">Earthen Slow Cooking & Authentic <em>Dining</em></h1>
+              <p class="slide-desc">Discover clay slow-cookers, kulhads, and teasets that impart rich mineral properties and alkaline balance to your meals. Rediscover natural goodness.</p>
+              <div class="slide-actions">
+                <button class="btn btn-sage btn-wide" onclick="showPage('shop'); filterAndShop('Kitchenware')">Shop Kitchenware</button>
+                <button class="btn btn-outline btn-wide" style="color:var(--cream);border-color:var(--cream)" onclick="showPage('about')">Our Process</button>
+              </div>
+            </div>
+            <div class="slide-visual">
+              <div class="hero-product-card">
+                <div class="hero-img-wrap"><img src="assets/images/chai_kulhad.png" alt="Chai Kulhad Set" /></div>
+                <div class="hero-meta">
+                  <p class="hero-tag">Earthy Tea Ritual</p>
+                  <h3 class="hero-name">Chai Kulhad Set (Set of 6)</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Navigation Controls -->
+      <button class="carousel-control carousel-prev" id="carouselPrevBtn"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-control carousel-next" id="carouselNextBtn"><i class="fas fa-chevron-right"></i></button>
+      
+      <div class="carousel-dots" id="carouselDots">
+        <span class="carousel-dot active"></span>
+        <span class="carousel-dot"></span>
+        <span class="carousel-dot"></span>
+      </div>
+    </div>
+
+    <!-- CATEGORIES QUICK LOOK -->
+    <div class="section-sm reveal">
+      <span class="section-label">Organic Curations</span>
+      <h2 class="section-title">Explore Earthen <em>Categories</em></h2>
+      <div class="categories-row">
+        <div class="category-chip" onclick="filterAndShop('Pottery')"><span class="category-chip-icon">🏺</span><span class="category-chip-label">Pottery</span></div>
+        <div class="category-chip" onclick="filterAndShop('Home Decor')"><span class="category-chip-icon">🫙</span><span class="category-chip-label">Home Decor</span></div>
+        <div class="category-chip" onclick="filterAndShop('Kitchenware')"><span class="category-chip-icon">🍲</span><span class="category-chip-label">Kitchenware</span></div>
+        <div class="category-chip" onclick="filterAndShop('Gifting')"><span class="category-chip-icon">🎁</span><span class="category-chip-label">Gifting</span></div>
+        <div class="category-chip" onclick="filterAndShop('Garden')"><span class="category-chip-icon">🪴</span><span class="category-chip-label">Garden</span></div>
+      </div>
+    </div>
+
+    <!-- FEATURED / DISCOVER CRAFT -->
+    <div class="section" id="homeFeatured">
+      <div class="section-header">
+        <div>
+          <span class="section-label">Signature Artistry</span>
+          <h2 class="section-title">Generational <em>Masterpieces</em></h2>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="showPage('shop')">Browse All Collection</button>
+      </div>
+      <div class="featured-grid" id="featuredGrid"></div>
+    </div>
+
+    <!-- CORPORATE PARTNERSHIP BANNER -->
+    <div class="section-sm reveal">
+      <div class="offer-banner">
+        <div class="offer-text">
+          <h3>Bespoke Corporate Partnerships</h3>
+          <p>Bring the soul of earth into corporate relationships. We provide customized branding, volume hampers, and handcrafted premium packaging designed proudly for sustainable business ethics.</p>
+        </div>
+        <button class="btn btn-primary btn-wide" style="background-color: var(--charcoal); border-color: var(--charcoal)" onclick="showPage('contact')">Connect with Us</button>
+      </div>
+    </div>
+
+    <!-- BEST SELLERS -->
+    <div class="section reveal">
+      <div class="section-header" style="justify-content:center; text-align:center">
+        <div>
+          <span class="section-label">Artisan Picks</span>
+          <h2 class="section-title">Highly Loved <em>Bestsellers</em></h2>
+          <p class="section-sub">Earthen craft pieces adored and cherished across thousands of sustainable homes.</p>
+        </div>
+      </div>
+      <div class="featured-grid" id="bestsellersGrid"></div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <div class="section about-section reveal">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img-main"><img src="assets/images/handpainted_flower_vase.png" alt="Artisan painting pot" /></div>
+        </div>
+        <div class="about-content">
+          <span class="section-label">Generational Heritage</span>
+          <h2 class="section-title">Hand-spun with <em>Clay</em> and Indian Pride</h2>
+          <p class="about-text">Every UrbanMitti creation represents the delicate rhythm of hand-spun potter’s wheels, ancient wood-firing kilns, and ethnic painting traditions kept alive for centuries.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🤲</div>
+              <div class="about-feature-text">
+                <h4>Generational Potters</h4>
+                <p>Ensuring direct trade and fair wages to traditional families across Rajasthan and Gujarat.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🌿</div>
+              <div class="about-feature-text">
+                <h4>100% Earth Minerals</h4>
+                <p>Pure clay bodies firing without synthetic chemicals, toxic coatings, or metal mixes.</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-sage btn-wide" onclick="showPage('about')">Discover Heritage</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="section reveal">
+      <div class="section-header" style="justify-content:center; text-align:center">
+        <div>
+          <span class="section-label">Patron Voices</span>
+          <h2 class="section-title">Valued Earthen <em>Journeys</em></h2>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Rajasthani water pot is absolutely incredible. It cools water beautifully in summer and the earthy scent is magnificent."</p>
+          <div class="review-author">
+            <div class="review-avatar">A</div>
+            <div>
+              <p class="review-name">Aditya Sen</p>
+              <p class="review-date">10 Apr 2026</p>
+              <p class="review-verified"><i class="fas fa-check-circle"></i> Verified Buyer</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Ordered 50 custom teasets for our company's corporate gifts. The feedback from clients was phenomenal. Pure class."</p>
+          <div class="review-author">
+            <div class="review-avatar">P</div>
+            <div>
+              <p class="review-name">Priyanka Rao</p>
+              <p class="review-date">28 Feb 2026</p>
+              <p class="review-verified"><i class="fas fa-check-circle"></i> Corporate Partner</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Madhubani vase has brought so much warmth to our living room. It represents actual art, not cheap industrial plastic."</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div>
+              <p class="review-name">Karan Mehta</p>
+              <p class="review-date">15 Jan 2026</p>
+              <p class="review-verified"><i class="fas fa-check-circle"></i> Verified Buyer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter-section">
+      <h2 class="newsletter-title">Join the Earthen Circle</h2>
+      <p class="newsletter-sub">Receive stories of artisan heritage, updates on custom curation launches, and slow living tips.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Your premium email address" required />
+        <button type="submit" class="btn btn-sage">Subscribe</button>
+      </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="logo">Urban<span>Mitti</span></a>
+          <p>Crafting luxurious, eco-friendly sustainable clayware and lifestyle decor spun by traditional master potters.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a onclick="showPage('shop')">Shop Pottery</a></li>
+            <li><a onclick="showPage('shop'); filterAndShop('Kitchenware')">Clay Kitchenware</a></li>
+            <li><a onclick="showPage('shop'); filterAndShop('Gifting')">Corporate Gifting</a></li>
+            <li><a onclick="showPage('about')">Artisan Heritage</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Brand Values</h4>
+          <ul>
+            <li><a onclick="showPage('about')">Direct Artisan Trade</a></li>
+            <li><a href="#">Eco-Friendly Materials</a></li>
+            <li><a href="#">Chemical-Free Clay</a></li>
+            <li><a href="#">Sustainable Living</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a onclick="showPage('contact')">Connect with Us</a></li>
+            <li><a href="#">Studio Location</a></li>
+            <li><a onclick="showPage('admin')" style="color:var(--primary-sage); font-weight:500"><i class="fas fa-user-shield"></i> Admin Portal</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 UrbanMitti Craft Co. All rights reserved.</p>
+        <div class="footer-payments">
+          <span class="payment-badge">UPI Secured</span>
+          <span class="payment-badge">Razorpay Partner</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: SHOP
+       ============================================================ -->
+  <div class="page" id="page-shop">
+    <div class="shop-header">
+      <span class="section-label">Heritage Catalogue</span>
+      <h1 class="section-title">Shop Earthen <em>Treasures</em></h1>
+    </div>
+    <div class="shop-controls">
+      <div class="filter-pills" id="filterPills">
+        <button class="filter-pill active" data-cat="All" onclick="setFilter(this)">All</button>
+        <button class="filter-pill" data-cat="Pottery" onclick="setFilter(this)">Pottery</button>
+        <button class="filter-pill" data-cat="Home Decor" onclick="setFilter(this)">Home Decor</button>
+        <button class="filter-pill" data-cat="Kitchenware" onclick="setFilter(this)">Kitchenware</button>
+        <button class="filter-pill" data-cat="Gifting" onclick="setFilter(this)">Gifting</button>
+        <button class="filter-pill" data-cat="Garden" onclick="setFilter(this)">Garden</button>
+      </div>
+    </div>
+    <div class="products-grid" id="shopGrid"></div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: PRODUCT DETAIL
+       ============================================================ -->
+  <div class="page" id="page-detail">
+    <div class="detail-wrap" id="detailContent"></div>
+    <div class="related-section">
+      <div class="section-header" style="margin-bottom:36px">
+        <div>
+          <span class="section-label">You May Also Like</span>
+          <h2 class="section-title" style="font-size:2rem">Related <em>Masterpieces</em></h2>
+        </div>
+      </div>
+      <div class="featured-grid" id="relatedGrid"></div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: CHECKOUT
+       ============================================================ -->
+  <div class="page" id="page-checkout">
+    <div style="background:var(--sand-light);padding:60px 40px;text-align:center">
+      <span class="section-label">Confirm Purchase</span>
+      <h1 class="section-title" style="margin:0">Secure <em>Checkout</em></h1>
+    </div>
+    <div class="checkout-wrap">
+      <div class="checkout-form-section">
+        <h2>Delivery Address</h2>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" class="form-control" placeholder="Swastik" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" class="form-control" placeholder="Sharma" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email Address</label><input type="email" class="form-control" placeholder="you@email.com" required /></div>
+          <div class="form-group"><label>Mobile Phone</label><input type="tel" class="form-control" placeholder="+91 98765 43210" required /></div>
+        </div>
+        <div class="form-group"><label>Shipping Address Line 1</label><input type="text" class="form-control" placeholder="Flat No., House No., Building Name" required /></div>
+        <div class="form-group"><label>Shipping Address Line 2 (Optional)</label><input type="text" class="form-control" placeholder="Area, Street, Landmark" /></div>
+        <div class="form-row">
+          <div class="form-group"><label>City</label><input type="text" class="form-control" placeholder="Lucknow" required /></div>
+          <div class="form-group"><label>Pincode / Zip</label><input type="text" class="form-control" placeholder="226001" required /></div>
+        </div>
+        <div class="form-group">
+          <label>State / Region</label>
+          <select class="form-control">
+            <option>Uttar Pradesh</option>
+            <option>Rajasthan</option>
+            <option>Delhi</option>
+            <option>Maharashtra</option>
+            <option>Karnataka</option>
+            <option>Tamil Nadu</option>
+            <option>Gujarat</option>
+            <option>West Bengal</option>
+          </select>
+        </div>
+        <p class="form-section-title">Select Payment Mode</p>
+        <div class="payment-methods">
+          <div class="payment-method selected" onclick="selectPayment(this)"><input type="radio" name="payment" checked /><span class="payment-method-icon">💳</span><label>UPI / Credit & Debit Cards via Razorpay</label></div>
+          <div class="payment-method" onclick="selectPayment(this)"><input type="radio" name="payment" /><span class="payment-method-icon">🚚</span><label>Cash on Delivery</label></div>
+        </div>
+        <div style="background:var(--sand-light);border-radius:var(--radius-md);padding:18px 24px;font-size:0.85rem;color:var(--text-secondary);margin-bottom:28px;border-left:4px solid var(--primary-sage)">
+          <strong style="display:block;margin-bottom:4px;color:var(--charcoal)">🔒 Direct Bank & UPI Integration</strong>
+          SSL Secured Payments with Razorpay Gateway integration. We do not store financial credentials.
+        </div>
+        <button class="btn btn-sage btn-full btn-wide" id="payBtn" onclick="handlePayment()"><i class="fas fa-lock"></i> Place Secure Order</button>
+        <p class="secure-badge"><i class="fas fa-shield-alt"></i> SSL Secured · 256-Bit Financial Encryption</p>
+      </div>
+      <div>
+        <div class="order-summary-card">
+          <h3 class="order-summary-title">Purchase Summary</h3>
+          <div class="order-items" id="checkoutItems"></div>
+          <div class="order-totals">
+            <div class="order-total-row"><span>Items Subtotal</span><span id="checkoutSubtotal">₹0</span></div>
+            <div class="order-total-row"><span>Shipping & Handling</span><span id="checkoutShipping">₹49</span></div>
+            <div class="order-total-row grand"><span>Total Premium Price</span><span id="checkoutTotal">₹0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: AUTH (OTP PHONE VERIFICATION FLOW)
+       ============================================================ -->
+  <div class="page" id="page-auth">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-logo"><span class="logo">Urban<span>Mitti</span></span></div>
+        
+        <!-- STEP 1: INPUT PHONE NUMBER -->
+        <div id="phoneStep">
+          <h2 class="auth-title">Verify Mobile</h2>
+          <p class="auth-sub">Enter your phone number to sign in or create an account securely</p>
+          <div class="form-group">
+            <label>Indian Phone Number</label>
+            <input type="tel" class="form-control" id="loginPhone" value="+91 " placeholder="+91 98765 43210" required />
+          </div>
+          <button class="btn btn-primary btn-full mt-16" onclick="sendOTP()">Send Verification OTP <i class="fas fa-paper-plane"></i></button>
+        </div>
+
+        <!-- STEP 2: INPUT OTP -->
+        <div id="otpStep" style="display:none">
+          <h2 class="auth-title">Enter OTP Code</h2>
+          <p class="auth-sub" id="otpSubLabel">An OTP code has been successfully dispatched to your phone</p>
+          <div class="otp-inputs-wrap">
+            <input type="text" class="otp-input-box" maxlength="1" onkeyup="moveOTPFocus(this, 'otp2', '')" id="otp1" />
+            <input type="text" class="otp-input-box" maxlength="1" onkeyup="moveOTPFocus(this, 'otp3', 'otp1')" id="otp2" />
+            <input type="text" class="otp-input-box" maxlength="1" onkeyup="moveOTPFocus(this, 'otp4', 'otp2')" id="otp3" />
+            <input type="text" class="otp-input-box" maxlength="1" onkeyup="moveOTPFocus(this, '', 'otp3')" id="otp4" />
+          </div>
+          <button class="btn btn-sage btn-full" onclick="verifyOTP()">Verify & Continue <i class="fas fa-arrow-right"></i></button>
+          <p class="auth-toggle">Didn't receive code? <a onclick="sendOTP()">Resend OTP Code</a></p>
+          <p class="auth-toggle"><a onclick="changeAuthPhone()"><i class="fas fa-arrow-left"></i> Change Phone Number</a></p>
+        </div>
+
+      </div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: DASHBOARD
+       ============================================================ -->
+  <div class="page" id="page-dashboard">
+    <div class="dashboard-wrap">
+      <aside class="dashboard-sidebar">
+        <div class="dash-user">
+          <div class="dash-avatar"><i class="far fa-user"></i></div>
+          <p class="dash-name" id="dashName">Urban Patron</p>
+          <p class="dash-email" id="dashPhone">+91 9876543210</p>
+        </div>
+        <div class="dash-nav">
+          <div class="dash-nav-item active" onclick="showDashTab('overview',this)"><i class="fas fa-chart-bar" style="width:16px"></i> Overview</div>
+          <div class="dash-nav-item" onclick="showDashTab('orders',this)"><i class="fas fa-box" style="width:16px"></i> My Orders</div>
+          <div class="dash-nav-item" onclick="showDashTab('wishlist',this)"><i class="fas fa-heart" style="width:16px"></i> My Wishlist</div>
+          <div class="dash-nav-item" style="margin-top:16px;color:var(--error)" onclick="handleLogout()"><i class="fas fa-sign-out-alt" style="width:16px"></i> Sign Out</div>
+        </div>
+      </aside>
+      <main class="dashboard-main">
+        <div id="dashOverview">
+          <h2>Welcome Back 👋</h2>
+          <div class="dash-stats">
+            <div class="dash-stat"><p class="dash-stat-num">3</p><p class="dash-stat-label">Orders Logged</p></div>
+            <div class="dash-stat"><p class="dash-stat-num" id="dashWishCount">0</p><p class="dash-stat-label">Wishlist Items</p></div>
+            <div class="dash-stat"><p class="dash-stat-num">₹3,497</p><p class="dash-stat-label">Total Spendings</p></div>
+          </div>
+          
+          <!-- DYNAMIC ADMIN GATEWAY ENTRY -->
+          <div class="dash-admin-callout" style="background:var(--sand-light); padding:24px; border-radius:var(--radius-md); border-left:4px solid var(--primary-sage); margin: 24px 0; box-shadow:var(--shadow-sm);">
+            <h4 style="margin-bottom:6px; color:var(--charcoal); font-family:var(--font-display); font-size:1.15rem; font-weight:600;"><i class="fas fa-user-shield" style="color:var(--primary-sage); margin-right:8px;"></i> Administrative Portal Live</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:14px; font-weight:300; line-height:1.5;">Welcome, Store Manager! You can customize and seed products list, review customer registers, update delivery logs, and examine monthly growth charts live from the database.</p>
+            <button class="btn btn-sage btn-sm" onclick="showPage('admin')">Open Management Console</button>
+          </div>
+          
+          <div class="orders-table">
+            <table>
+              <thead><tr><th>Order ID</th><th>Date</th><th>Products</th><th>Total Price</th><th>Order Status</th></tr></thead>
+              <tbody>
+                <tr><td>#UM2601</td><td>12 Mar 2026</td><td>Mitti Pot, Diya Set</td><td>₹1,748</td><td><span class="order-status delivered">Delivered</span></td></tr>
+                <tr><td>#UM2589</td><td>28 Feb 2026</td><td>Chai Kulhad Set</td><td>₹799</td><td><span class="order-status delivered">Delivered</span></td></tr>
+                <tr><td>#UM2556</td><td>10 Feb 2026</td><td>Terracotta Lamp</td><td>₹950</td><td><span class="order-status delivered">Delivered</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="dashOrders" style="display:none">
+          <h2>My Order Log</h2>
+          <div class="orders-table">
+            <table>
+              <thead><tr><th>Order ID</th><th>Date</th><th>Products</th><th>Total Price</th><th>Order Status</th></tr></thead>
+              <tbody>
+                <tr><td>#UM2601</td><td>12 Mar 2026</td><td>Mitti Pot, Diya Set</td><td>₹1,748</td><td><span class="order-status delivered">Delivered</span></td></tr>
+                <tr><td>#UM2589</td><td>28 Feb 2026</td><td>Chai Kulhad Set</td><td>₹799</td><td><span class="order-status delivered">Delivered</span></td></tr>
+                <tr><td>#UM2556</td><td>10 Feb 2026</td><td>Terracotta Lamp</td><td>₹950</td><td><span class="order-status delivered">Delivered</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="dashWishlist" style="display:none">
+          <h2>My Curated Wishlist</h2>
+          <div class="featured-grid" id="dashWishlistGrid"></div>
+          <p id="emptyWish" style="color:var(--text-muted);font-size:0.9rem;display:none;margin-top:20px">Your wishlist is empty. <a onclick="showPage('shop')" style="color:var(--primary-sage)">Explore Catalogue →</a></p>
+        </div>
+      </main>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: OUR STORY / HERITAGE
+       ============================================================ -->
+  <div class="page" id="page-about">
+    <div style="background:linear-gradient(135deg,var(--charcoal),#151a18);padding:100px 40px;text-align:center;position:relative;overflow:hidden">
+      <span class="section-label" style="color:var(--neutral-clay)">Immersive Narrative</span>
+      <h1 class="section-title" style="color:var(--cream);margin:0">Artisan Heritage & <em>Craft</em></h1>
+    </div>
+    <div class="section">
+      <div style="max-width:760px;margin:0 auto;text-align:center">
+        <p style="font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:var(--charcoal);line-height:1.6;margin-bottom:28px;font-style:italic">"Every creation returned by the fire carries the soul of the soil and the heartbeat of its sculptor."</p>
+        <p style="font-size:1rem;color:var(--text-secondary);line-height:1.9;margin-bottom:20px;font-weight:300">UrbanMitti was founded to bring the timeless wisdom of traditional Indian pottery back into contemporary corporate and private lifestyles. We replace toxic synthetic plastic, metals, and chemical containers with raw earth elements spun proudly by traditional Indian potters.</p>
+        <p style="font-size:1rem;color:var(--text-secondary);line-height:1.9;font-weight:300">Our clay bodies are carefully dug from natural alluvial banks in Rajasthan and Gujarat, hand-spun on traditional wheels, dried organically under the morning sun, and wood-fired in clay kilns at optimal high-end temperatures.</p>
+      </div>
+    </div>
+    <div style="background:var(--sand-light)">
+      <div class="section">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;text-align:center">
+          <div style="padding:40px 24px;background:var(--white);border-radius:var(--radius-xl);border:1px solid var(--border-light)"><div style="font-size:2.5rem;margin-bottom:12px">🤲</div><h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--charcoal);margin-bottom:8px">12+ Potter Families</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6">Sustaining generational skills with fair directly traded trade prices.</p></div>
+          <div style="padding:40px 24px;background:var(--white);border-radius:var(--radius-xl);border:1px solid var(--border-light)"><div style="font-size:2.5rem;margin-bottom:12px">🌿</div><h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--charcoal);margin-bottom:8px">100% Lead-Free</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6">Absolutely lead-free, chemical glaze-free organic earthware only.</p></div>
+          <div style="padding:40px 24px;background:var(--white);border-radius:var(--radius-xl);border:1px solid var(--border-light)"><div style="font-size:2.5rem;margin-bottom:12px">📦</div><h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--charcoal);margin-bottom:8px">Eco Logistics</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6">Packed exclusively in corrugated board, paper shreds and zero plastic wraps.</p></div>
+          <div style="padding:40px 24px;background:var(--white);border-radius:var(--radius-xl);border:1px solid var(--border-light)"><div style="font-size:2.5rem;margin-bottom:12px">🏢</div><h3 style="font-family:var(--font-display);font-size:1.4rem;color:var(--charcoal);margin-bottom:8px">Corporate Decor</h3><p style="font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.6">Empowering office workspaces and custom partnerships sustainably.</p></div>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: CONTACT
+       ============================================================ -->
+  <div class="page" id="page-contact">
+    <div style="background:linear-gradient(135deg,var(--charcoal),#151a18);padding:100px 40px;text-align:center">
+      <span class="section-label" style="color:var(--neutral-clay)">Collaborations & Queries</span>
+      <h1 class="section-title" style="color:var(--cream);margin:0">Contact <em>Our Studio</em></h1>
+    </div>
+    <div class="section">
+      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start">
+        <div>
+          <h3 style="font-family:var(--font-display);font-size:1.8rem;color:var(--charcoal);margin-bottom:24px;font-weight:400">Curating Sustainable Solutions</h3>
+          <p style="font-size:0.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:32px">Connect with our styling team for office decors, customized corporate gifting boxes, wedding favors, or personal commissions.</p>
+          <div style="display:flex;flex-direction:column;gap:24px;margin-bottom:36px">
+            <div style="display:flex;gap:16px;align-items:center"><div style="width:44px;height:44px;background:var(--sand-light);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.15rem">📧</div><div><p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Studio Email</p><p style="color:var(--charcoal);font-weight:500">partner@urbanmitti.com</p></div></div>
+            <div style="display:flex;gap:16px;align-items:center"><div style="width:44px;height:44px;background:var(--sand-light);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.15rem">📞</div><div><p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Direct Hotline</p><p style="color:var(--charcoal);font-weight:500">+91 70785 90322</p></div></div>
+            <div style="display:flex;gap:16px;align-items:center"><div style="width:44px;height:44px;background:var(--sand-light);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.15rem">📍</div><div><p style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px">Studio Location</p><p style="color:var(--charcoal);font-weight:500">Hazratganj, Lucknow, UP, India</p></div></div>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-xl);padding:44px;box-shadow:var(--shadow-md)">
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group"><label>Your Name</label><input type="text" id="contactName" class="form-control" placeholder="Earthen Patron" required /></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="contactEmail" class="form-control" placeholder="patron@gmail.com" required /></div>
+            <div class="form-group"><label>Subject / Interest</label><input type="text" id="contactSubject" class="form-control" placeholder="Corporate Gifting query, office planter design..." required /></div>
+            <div class="form-group"><label>Message / Details</label><textarea id="contactMessage" class="form-control" rows="5" placeholder="Write details here..." style="resize:vertical" required></textarea></div>
+            <button type="submit" class="btn btn-sage btn-full" id="contactSubmitBtn">Submit Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: WISHLIST
+       ============================================================ -->
+  <div class="page" id="page-wishlist">
+    <div style="background:var(--sand-light);padding:60px 40px;text-align:center">
+      <span class="section-label">Your Saved Curation</span>
+      <h1 class="section-title" style="margin:0">My Earthen <em>Wishlist</em></h1>
+    </div>
+    <div class="section">
+      <div class="featured-grid" id="wishlistPageGrid"></div>
+      <div id="emptyWishlistPage" style="text-align:center;padding:80px 0;display:none">
+        <div style="font-size:3.5rem;margin-bottom:16px">🤍</div>
+        <p style="color:var(--text-muted);margin-bottom:24px">No items saved in your wishlist. Start exploring now!</p>
+        <button class="btn btn-primary" onclick="showPage('shop')">Browse Collection</button>
+      </div>
+    </div>
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. All rights reserved.</p></div></footer>
+  </div>
+
+  <!-- ============================================================
+       PAGE: ADMIN PORTAL
+       ============================================================ -->
+  <div class="page" id="page-admin">
+    <div class="admin-header">
+      <span class="section-label">Management Console</span>
+      <h1 class="section-title">Admin <em>Panel</em></h1>
+    </div>
+    
+    <div class="admin-wrap">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-avatar"><i class="fas fa-user-shield"></i></div>
+          <p class="admin-name">Administrator</p>
+          <p class="admin-role">Store Manager</p>
+        </div>
+        <div class="admin-nav">
+          <div class="admin-nav-item active" onclick="showAdminTab('overview', this)">
+            <i class="fas fa-chart-line" style="width:16px"></i> Overview Dashboard
+          </div>
+          <div class="admin-nav-item" onclick="showAdminTab('products', this)">
+            <i class="fas fa-boxes" style="width:16px"></i> Product Management
+          </div>
+          <div class="admin-nav-item" onclick="showAdminTab('orders', this)">
+            <i class="fas fa-shopping-cart" style="width:16px"></i> Orders Received
+          </div>
+          <div class="admin-nav-item" onclick="showAdminTab('customers', this)">
+            <i class="fas fa-users" style="width:16px"></i> Customer Directory
+          </div>
+          <div class="admin-nav-item" id="adminExitBtn" style="margin-top: 24px; color: var(--error);">
+            <i class="fas fa-sign-out-alt" style="width:16px"></i> Exit Admin Portal
+          </div>
+        </div>
+      </aside>
+      
+      <!-- Admin Main Content Area -->
+      <main class="admin-main">
+        
+        <!-- SUB-TAB 1: OVERVIEW DASHBOARD -->
+        <div id="adminTab-overview">
+          <h2 class="admin-tab-title">Metrics Summary</h2>
+          <div class="admin-stats-grid">
+            <div class="admin-stat-card">
+              <span class="admin-stat-icon"><i class="fas fa-coins"></i></span>
+              <div>
+                <p class="admin-stat-label">Total Revenue</p>
+                <h3 class="admin-stat-num" id="adminRevenue">₹0</h3>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <span class="admin-stat-icon"><i class="fas fa-truck"></i></span>
+              <div>
+                <p class="admin-stat-label">Orders Logged</p>
+                <h3 class="admin-stat-num" id="adminOrderCount">0</h3>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <span class="admin-stat-icon"><i class="fas fa-cubes"></i></span>
+              <div>
+                <p class="admin-stat-label">Total Products</p>
+                <h3 class="admin-stat-num" id="adminProductCount">0</h3>
+              </div>
+            </div>
+            <div class="admin-stat-card">
+              <span class="admin-stat-icon"><i class="fas fa-users"></i></span>
+              <div>
+                <p class="admin-stat-label">Total Patrons</p>
+                <h3 class="admin-stat-num" id="adminCustomerCount">0</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="admin-chart-box">
+            <div class="chart-header">
+              <h3>Monthly Sales & Revenue Growth</h3>
+              <span class="chart-legend"><i class="fas fa-circle" style="color:var(--primary-sage)"></i> Projected Sales</span>
+            </div>
+            <div class="mock-chart-visual">
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:45%"></div><span>Jan</span></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:60%"></div><span>Feb</span></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:55%"></div><span>Mar</span></div>
+              <div class="chart-bar-wrap"><div class="chart-bar" style="height:80%"></div><span>Apr</span></div>
+              <div class="chart-bar-wrap"><div class="chart-bar active" style="height:95%"></div><span>May</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- SUB-TAB 2: PRODUCT MANAGEMENT -->
+        <div id="adminTab-products" style="display:none">
+          <div class="admin-split-layout">
+            <!-- Form Area (Left) -->
+            <div class="admin-form-container">
+              <h2 class="admin-tab-title" id="productFormTitle">Add New Product</h2>
+              <form id="adminProductForm" onsubmit="saveProduct(event)">
+                <input type="hidden" id="editProductId" value="" />
+                
+                <div class="form-group">
+                  <label>Product Name *</label>
+                  <input type="text" id="adminProdName" class="form-control" placeholder="Rajasthani Clay Water Pitcher" required />
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group" style="flex:1">
+                    <label>Price (₹) *</label>
+                    <input type="number" id="adminProdPrice" class="form-control" placeholder="1299" required />
+                  </div>
+                  <div class="form-group" style="flex:1">
+                    <label>Category *</label>
+                    <select id="adminProdCat" class="form-control">
+                      <option value="Pottery">Pottery</option>
+                      <option value="Home Decor">Home Decor</option>
+                      <option value="Kitchenware">Kitchenware</option>
+                      <option value="Gifting">Gifting</option>
+                      <option value="Garden">Garden</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label>Description *</label>
+                  <textarea id="adminProdDesc" class="form-control" rows="3" placeholder="Hand-thrown organic clay pot..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label>Product Photo *</label>
+                  <div class="photo-upload-wrap" style="display:flex; flex-direction:column; gap:12px;">
+                    <!-- Sleek Image Preview Box -->
+                    <div id="adminProdImgPreview" style="width:100%; height:120px; border:2px dashed var(--border-medium); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; background:var(--sand-light); overflow:hidden; transition:border-color var(--transition)">
+                      <span style="font-size:0.8rem; color:var(--text-muted)"><i class="fas fa-image" style="font-size:1.4rem; margin-right:8px; vertical-align:middle"></i> No Photo Selected</span>
+                    </div>
+                    <!-- Upload or Select Options -->
+                    <div style="display:flex; gap:10px; align-items:center;">
+                      <label class="btn btn-outline btn-xs" style="flex:1; text-align:center; padding:10px; cursor:pointer; font-size:0.68rem; margin:0; display:inline-flex; align-items:center; justify-content:center; gap:6px;">
+                        <i class="fas fa-upload"></i> Upload File
+                        <input type="file" id="adminProdFile" accept="image/*" style="display:none;" onchange="handleAdminImgUpload(event)" />
+                      </label>
+                      <span style="font-size:0.75rem; color:var(--text-muted)">or</span>
+                      <select id="adminProdImg" class="form-control" style="flex:1.5; margin:0" onchange="handleAdminSelectChange(this.value)">
+                        <option value="">-- Choose Library --</option>
+                        <option value="assets/images/clay_water_pot.png">Rajasthani Water Pot</option>
+                        <option value="assets/images/terracotta_diyas.png">Terracotta Diyas</option>
+                        <option value="assets/images/chai_kulhad.png">Chai Kulhad Set</option>
+                        <option value="assets/images/clay_planter.png">Terracotta Planter</option>
+                        <option value="assets/images/essential_oil_diffuser.png">Clay Oil Diffuser</option>
+                        <option value="assets/images/handpainted_flower_vase.png">Flower Vase</option>
+                        <option value="assets/images/clay_cooking_pot.png">Clay Cooking Pot</option>
+                        <option value="assets/images/terracotta_wind_chime.png">Wind Chime</option>
+                        <option value="assets/images/clay_teapot_set.png">Clay Tea Set</option>
+                        <option value="assets/images/earthen_night_lamp.png">Earthen Night Lamp</option>
+                      </select>
+                    </div>
+                    <!-- Hidden field to hold final image source data -->
+                    <input type="hidden" id="adminProdImgSrc" value="" />
+                  </div>
+                </div>
+                
+                <div class="form-row" style="margin-top:10px; gap:20px; display:flex">
+                  <label class="checkbox-label" style="display:flex; align-items:center; gap:8px; font-size:0.85rem">
+                    <input type="checkbox" id="adminProdFeatured" /> Featured Masterpiece
+                  </label>
+                  <label class="checkbox-label" style="display:flex; align-items:center; gap:8px; font-size:0.85rem">
+                    <input type="checkbox" id="adminProdBest" /> High Bestseller
+                  </label>
+                </div>
+                
+                <div class="form-actions" style="margin-top:20px; display:flex; gap:10px">
+                  <button type="submit" class="btn btn-sage btn-full btn-sm" id="prodSubmitBtn">Save Product</button>
+                  <button type="button" class="btn btn-outline btn-sm" onclick="cancelProductEdit()" style="display:none" id="prodCancelBtn">Cancel</button>
+                </div>
+              </form>
+            </div>
+            
+            <!-- List Area (Right) -->
+            <div class="admin-list-container">
+              <h2 class="admin-tab-title">Existing Catalog</h2>
+              <div class="admin-search-box">
+                <input type="text" id="adminProdSearch" class="form-control" placeholder="Search catalog..." oninput="renderAdminProducts()" />
+              </div>
+              <div class="admin-table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminProductsTable">
+                    <!-- Loaded dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- SUB-TAB 3: ORDERS RECEIVED -->
+        <div id="adminTab-orders" style="display:none">
+          <h2 class="admin-tab-title">Earthen Orders Log</h2>
+          <div class="admin-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTable">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- SUB-TAB 4: CUSTOMER DIRECTORY -->
+        <div id="adminTab-customers" style="display:none">
+          <h2 class="admin-tab-title">Customer Patrons</h2>
+          <div class="admin-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Location</th>
+                  <th>Joined Date</th>
+                </tr>
+              </thead>
+              <tbody id="adminCustomersTable">
+                <!-- Loaded dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+      </main>
+    </div>
+    
+    <!-- Order Details Modal -->
+    <div class="admin-modal-overlay" id="orderModal" onclick="closeOrderModal()">
+      <div class="admin-modal" onclick="event.stopPropagation()">
+        <div class="admin-modal-header">
+          <h3 id="modalOrderId">Order Details</h3>
+          <button class="modal-close-btn" onclick="closeOrderModal()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="admin-modal-body" id="orderModalBody">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+    
+    <footer><div class="footer-bottom" style="max-width:100%"><p>© 2026 UrbanMitti. Admin Console.</p></div></footer>
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION BAR -->
+  <div class="mobile-bottom-nav">
+    <a onclick="showPage('home')" class="mobile-bottom-link active" data-mobile-tab="home">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a onclick="showPage('shop')" class="mobile-bottom-link" data-mobile-tab="shop">
+      <i class="fas fa-store"></i>
+      <span>Shop</span>
+    </a>
+    <a onclick="toggleCart()" class="mobile-bottom-link" data-mobile-tab="cart">
+      <div style="position:relative; display:inline-block;">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="mobileCartBadge">0</span>
+      </div>
+      <span>Bag</span>
+    </a>
+    <a onclick="showPage('wishlist')" class="mobile-bottom-link" data-mobile-tab="wishlist">
+      <div style="position:relative; display:inline-block;">
+        <i class="fas fa-heart"></i>
+        <span class="cart-badge" id="mobileWishlistBadge">0</span>
+      </div>
+      <span>Saved</span>
+    </a>
+    <a onclick="showPage('dashboard')" class="mobile-bottom-link" data-mobile-tab="dashboard">
+      <i class="fas fa-user"></i>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- TOAST NOTIFICATIONS CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- ============================================================
+       CART DRAWER & OVERLAY
+       ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <span class="cart-drawer-title">Shopping Bag (<span id="cartCount">0</span>)</span>
+      <button class="cart-close-btn" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal"><span>Items Subtotal</span><span id="cartSubtotal">₹0</span></div>
+      <div class="cart-shipping"><span>Shipping Fee</span><span id="cartShipping">₹0</span></div>
+      <div class="cart-total"><span>Final Total</span><span id="cartTotal">₹0</span></div>
+      <button class="btn btn-sage btn-full" onclick="toggleCart(); showPage('checkout')">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- ============================================================
+       LINKING EXTRACTED BRAND JAVASCRIPT
+       ============================================================ -->
+  <script type="module" src="assets/js/app.js?v=2"></script>
+</body>
+</html>
